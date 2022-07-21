@@ -21,39 +21,14 @@ def get_article():
     })
 
 @app.route("/liked-article", methods=["POST"])
-def liked_article():
-    article = all_articles[0]
-    liked_articles.append(article)
-    all_articles.pop(0)
-    return jsonify({
-        "status": "success"
-    }), 201
+
 
 @app.route("/unliked-article", methods=["POST"])
-def unliked_article():
-    article = all_articles[0]
-    not_liked_articles.append(article)
-    all_articles.pop(0)
-    return jsonify({
-        "status": "success"
-    }), 201
+
 
 @app.route("/popular-articles")
-def popular_articles():
-    article_data = []
-    for article in output:
-        _d = {
-            "url": article[0],
-            "title": article[1],
-            "text": article[2],
-            "lang": article[3],
-            "total_events": article[4]
-        }
-        article_data.append(_d)
-    return jsonify({
-        "data": article_data,
-        "status": "success"
-    }), 200
+
+   
 
 @app.route("/recommended-articles")
 def recommended_articles():
